@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects — solvurax.com
+# Sources are path-only on Pages (domain-level sources unsupported);
+# www → apex is a zone-level Redirect Rule — see deploy runbook.
+/index       /  301
+/index.html  /  301

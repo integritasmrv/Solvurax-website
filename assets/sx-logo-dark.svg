@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1080" role="img" aria-label="Solvura X">
+  <title>Solvura X logo</title>
+  <defs></defs>
+  <circle cx="1000" cy="520" r="440" fill="none" stroke="#C8862E" stroke-width="3.5"></circle>
+  <line x1="619" y1="740" x2="1381" y2="300" stroke="#EFE8D6" stroke-width="3" stroke-linecap="round"></line>
+  <circle cx="1274" cy="362" r="42" fill="none" stroke="#C8862E" stroke-width="2"></circle>
+  <circle cx="1274" cy="362" r="26" fill="#F8B860"></circle>
+  <text x="80" y="558.0" font-family="'Libre Franklin', system-ui, sans-serif" font-weight="400" font-size="200" letter-spacing="-4" fill="#EFE8D6">Solvura</text>
+  <text x="1000" y="618.7" text-anchor="middle" font-family="'Libre Franklin', system-ui, sans-serif" font-weight="400" font-size="266" fill="#F8B860">X</text>
+</svg>

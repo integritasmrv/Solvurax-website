@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;1,300&family=Geist+Mono:wght@400;700&display=swap');
+
+:root {
+  --space-8: 8px;
+  --space-13: 13px;
+  --space-21: 21px;
+  --space-34: 34px;
+  --space-55: 55px;
+  --space-89: 89px;
+  --space-144: 144px;
+
+  --content-max: 987px;
+  --prose-max: 610px;
+  --page-max: 1597px;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Libre Franklin", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --line-tight: 1.08;
+  --line-heading: 1.16;
+  --line-body: 1.62;
+  --line-label: 1.3;
+
+  --radius-small: 4px;
+  --radius-medium: 8px;
+
+  --transition-fast: 140ms ease;
+}
+
+html[data-theme="obsidian"] {
+  --surface-deep: #001008;
+  --surface: #002818;
+  --raised: #06351F;
+  --lifted: #0B4226;
+  --hairline: #1E3D2D;
+  --headline-ink: #EFE8D6;
+  --body-ink: #C9C2B0;
+  --muted: #8A9389;
+  --accent-gilt: #F8B860;
+  --structural-gilt: #C8862E;
+  --positive: #5BBE8E;
+  --negative: #D9826B;
+}
+
+html[data-theme="flyleaf"] {
+  --surface-deep: #EFE8D6;
+  --surface: #EFE8D6;
+  --raised: #E6DEC9;
+  --lifted: #E6DEC9;
+  --hairline: #CFC8B6;
+  --headline-ink: #002818;
+  --body-ink: #33413A;
+  --muted: #5C665E;
+  --accent-gilt: #8A5E1E;
+  --structural-gilt: #8A5E1E;
+  --positive: #0E5A3C;
+  --negative: #8C2F2F;
+}
