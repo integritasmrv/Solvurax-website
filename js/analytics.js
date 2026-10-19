@@ -4,13 +4,11 @@
   /*
    * DataFast analytics loader.
    *
-   * Replace ANALYTICS_SITE_ID with the real website ID from the DataFast
-   * dashboard (Dashboard -> New website -> "dfid_..."). While the placeholder
-   * is still present this loader is a no-op, so the site can be deployed
-   * safely without emitting any analytics traffic.
+   * Site ID: dfid_NTpqL3UvEcyztHwuRevmA
+   * Domain:  solvurax.com
    */
 
-  var ANALYTICS_SITE_ID = "dfid_REPLACE_WITH_REAL_SITE_ID";
+  var ANALYTICS_SITE_ID = "dfid_NTpqL3UvEcyztHwuRevmA";
   var ANALYTICS_DOMAIN = "solvurax.com";
   var SCRIPT_SRC = "https://datafa.st/js/script.js";
 
