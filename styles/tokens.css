@@ -1,59 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;1,300&family=Geist+Mono:wght@400;700&display=swap');
+/* ─── Solvura-X design tokens ───────────────────────────────────── */
 
 :root {
-  --space-8: 8px;
-  --space-13: 13px;
-  --space-21: 21px;
-  --space-34: 34px;
-  --space-55: 55px;
-  --space-89: 89px;
+  /* Type scale (modular, ~1.25) */
+  --text-sm:   0.8rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.563rem;
+  --text-3xl:  1.953rem;
+  --text-4xl:  2.441rem;
+  --text-5xl:  3.052rem;
+
+  /* Line-height */
+  --line-tight:    1.1;
+  --line-heading:  1.22;
+  --line-snug:     1.35;
+  --line-normal:   1.56;
+  --line-label:    1.4;
+
+  /* Font stacks */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'Geist Mono', 'SF Mono', Consolas, monospace;
+
+  /* Spacing (Fibonacci) */
+  --space-0:   0;
+  --space-2:   2px;
+  --space-4:   4px;
+  --space-8:   8px;
+  --space-13:  13px;
+  --space-21:  21px;
+  --space-34:  34px;
+  --space-55:  55px;
+  --space-89:  89px;
   --space-144: 144px;
 
-  --content-max: 987px;
-  --prose-max: 610px;
-  --page-max: 1597px;
-
-  --font-display: "Fraunces", serif;
-  --font-body: "Libre Franklin", sans-serif;
-  --font-mono: "Geist Mono", monospace;
-
-  --line-tight: 1.08;
-  --line-heading: 1.16;
-  --line-body: 1.62;
-  --line-label: 1.3;
-
-  --radius-small: 4px;
+  /* Border radius */
+  --radius-small:  4px;
   --radius-medium: 8px;
+  --radius-large:  12px;
+  --radius-xlarge: 20px;
 
-  --transition-fast: 140ms ease;
+  /* Content widths */
+  --content-narrow:  610px;
+  --content-default: 987px;
+  --content-wide:    1597px;
+  --content-full:    100%;
+  --prose-max:       70ch;
+
+  /* Aliases used by site.css */
+  --page-max:     var(--content-wide);
+  --content-max:  var(--content-default);
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-med:  0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Z-index layers */
+  --z-base:    1;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   1000;
 }
 
+/* ─── Obsidian (dark) ───────────────────────────────────────────── */
 html[data-theme="obsidian"] {
-  --surface-deep: #001008;
-  --surface: #002818;
-  --raised: #06351F;
-  --lifted: #0B4226;
-  --hairline: #1E3D2D;
-  --headline-ink: #EFE8D6;
-  --body-ink: #C9C2B0;
-  --muted: #8A9389;
-  --accent-gilt: #F8B860;
+  /* Surfaces — deep green-black progression */
+  --surface-deep:  #001008;
+  --surface:       #002818;
+  --raised:        #06351F;
+  --lifted:        #0B4226;
+  --elevated:      #114D2E;
+
+  /* Hairline / structural borders */
+  --hairline:       #1E3D2D;
   --structural-gilt: #C8862E;
-  --positive: #5BBE8E;
-  --negative: #D9826B;
+
+  /* Text hierarchy */
+  --headline-ink: #EFE8D6;
+  --body-ink:     #C9C2B0;
+  --muted:        #8A9389;
+
+  /* Accent — warm gold */
+  --accent-gilt: #F8B860;
+
+  /* Data accent — warm gold variant */
+  --accent-cyan: #F8B860;
+
+  /* Glass morphism */
+  --glass-bg:     rgba(0, 40, 24, 0.72);
+  --glass-border: rgba(30, 61, 45, 0.48);
+  --glass-glow:   rgba(248, 184, 96, 0.10);
+
+  /* Semantic */
+  --positive: #F8B860;
+  --negative: #E06C75;
+  --neutral:  #8A9389;
 }
 
+/* ─── Flyleaf (light) ───────────────────────────────────────────── */
 html[data-theme="flyleaf"] {
-  --surface-deep: #EFE8D6;
-  --surface: #EFE8D6;
-  --raised: #E6DEC9;
-  --lifted: #E6DEC9;
-  --hairline: #CFC8B6;
-  --headline-ink: #002818;
-  --body-ink: #33413A;
-  --muted: #5C665E;
-  --accent-gilt: #8A5E1E;
+  --surface-deep:  #E4DDD2;
+  --surface:       #EFE8D6;
+  --raised:        #F5F0E4;
+  --lifted:        #FAF7EE;
+  --elevated:      #FFFFFF;
+
+  --hairline:       #D6CCBB;
   --structural-gilt: #8A5E1E;
-  --positive: #0E5A3C;
-  --negative: #8C2F2F;
+
+  --headline-ink: #1B1A17;
+  --body-ink:     #3D3A33;
+  --muted:        #7A7568;
+
+  --accent-gilt:  #C8862E;
+  --accent-cyan:  #C8862E;
+
+  --glass-bg:     rgba(239, 232, 214, 0.72);
+  --glass-border: rgba(214, 204, 187, 0.48);
+  --glass-glow:   rgba(200, 134, 46, 0.10);
+
+  --positive: #C8862E;
+  --negative: #C0392B;
+  --neutral:  #7A7568;
+}
+
+/* ─── Font face declarations ────────────────────────────────────── */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/fraunces/v31/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nkasn1ow9.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/librefranklin/v18/jizOREFNn1dOx-zrZ2X3pZvkTi2k_iI0q1vjitOh.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-mono/GeistMono-Regular.woff2') format('woff2');
 }

@@ -1,0 +1,85 @@
+/* website tool module: CBAM cost estimator - site variables only, both themes, scoped to .sx-tool */
+.sx-tool {
+  margin-block: var(--s-55);
+  padding: var(--s-34);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+}
+.sx-tool .eyebrow { margin-bottom: var(--s-13); }
+.sx-tool h2 { margin-bottom: var(--s-13); }
+.sx-tool-lead { max-width: var(--prose); margin: 0 0 var(--s-34); }
+
+.sx-tool-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-34); align-items: start; }
+
+.sx-tool fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.sx-tool legend {
+  margin-bottom: var(--s-21); padding: 0; color: var(--muted);
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.3; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.sx-field { display: grid; gap: 6px; margin-bottom: var(--s-21); }
+.sx-field label { color: var(--ink-strong); font-size: 15px; line-height: 1.4; }
+.sx-field input {
+  width: 100%; min-height: 44px; padding: 10px var(--s-13);
+  border: 1px solid var(--muted); border-radius: var(--radius);
+  background: var(--bg); color: var(--ink-strong);
+  font-family: var(--font-mono); font-size: 16px; line-height: 1.3;
+}
+.sx-field input:hover { border-color: var(--ink); }
+.sx-field input::placeholder { color: var(--muted); opacity: 1; }
+.sx-field input[aria-invalid="true"] { border-color: var(--ink-strong); border-width: 2px; }
+.sx-field-hint, .sx-field-error { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.sx-field-error { color: var(--ink-strong); font-weight: 700; }
+.sx-field-error:empty { display: none; }
+
+.sx-tool-results { padding: var(--s-21); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius); background: var(--bg); }
+.sx-tool-results h3 { margin-bottom: var(--s-21); font-size: 18px; line-height: 1.3; }
+.sx-tool-results dl { display: grid; gap: var(--s-13); margin: 0 0 var(--s-21); }
+.sx-tool-results dl div { display: grid; gap: 2px; padding-bottom: var(--s-13); border-bottom: 1px solid var(--line); }
+.sx-tool-results dt { color: var(--ink); font-size: 14px; line-height: 1.4; }
+.sx-tool-results dd { margin: 0; color: var(--ink-strong); font-family: var(--font-mono); font-size: 22px; line-height: 1.25; overflow-wrap: anywhere; }
+.sx-tool-results dd.is-total { color: var(--accent-text); font-weight: 700; }
+.sx-tool-results dd.is-prompt { color: var(--ink); font-family: var(--font-sans); font-size: 15px; font-weight: 400; }
+.sx-tool-formula, .sx-tool-note { margin: 0 0 var(--s-8); color: var(--muted); font-size: 13px; line-height: 1.5; }
+.sx-tool-note { margin-bottom: 0; }
+
+@media (max-width: 760px) {
+  .sx-tool { padding: var(--s-21); margin-block: var(--s-34); }
+  .sx-tool-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-21); }
+  .sx-tool-results dd { font-size: 20px; }
+}
+
+/* CBAM cost estimator only: the select and the year-by-year table */
+.sx-field select {
+  width: 100%; min-height: 44px; padding: 10px var(--s-13);
+  border: 1px solid var(--muted); border-radius: var(--radius);
+  background: var(--bg); color: var(--ink-strong);
+  font-family: var(--font-mono); font-size: 16px; line-height: 1.3;
+}
+.sx-field select:hover { border-color: var(--ink); }
+.sx-tool-years { margin-top: var(--s-34); }
+.sx-tool-table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.4; }
+.sx-tool-table caption {
+  margin-bottom: var(--s-13); color: var(--muted); text-align: left;
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.3; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.sx-tool-table th, .sx-tool-table td { padding: var(--s-8) var(--s-13); border-bottom: 1px solid var(--line); text-align: right; vertical-align: bottom; }
+.sx-tool-table thead th { color: var(--ink); font-weight: 400; }
+.sx-tool-table thead th:first-child { text-align: left; }
+.sx-tool-table th[scope="row"] { color: var(--ink-strong); text-align: left; font-weight: 700; }
+.sx-tool-table td { color: var(--ink-strong); font-family: var(--font-mono); }
+.sx-tool > .sx-tool-note { margin-top: var(--s-21); }
+
+@media (max-width: 760px) {
+  .sx-tool-table { font-size: 12px; }
+  .sx-tool-table th, .sx-tool-table td { padding: 6px 4px; }
+}
+
+/* "Email this estimate" link, last line of each tool */
+.sx-tool .sx-tool-email { margin: var(--s-21) 0 0; font-family: var(--font-mono); font-size: 14px; line-height: 1.4; }
+.sx-tool .sx-tool-email a { color: var(--accent-text); text-underline-offset: 3px; }
+.sx-tool .sx-tool-email a:hover { color: var(--ink-strong); }
+
+/* the benchmark field when no free allocation applies, and the goods list when a sector has no goods: shown with a dashed border */
+.sx-field input[aria-disabled="true"], .sx-field select[aria-disabled="true"] { border-style: dashed; }

@@ -1,0 +1,98 @@
+/* inner pages: the first screen carries words only, one column, no globe */
+.hero-inner { grid-template-columns: 1fr; min-height: 0; padding-block: var(--s-89); }
+.hero-inner .content-column { max-width: none; }
+.hero-inner .hero-actions { margin-bottom: 0; }
+.hero-compact { padding-block: var(--s-55) var(--s-89); }
+
+/* the six steps in full (approach) */
+.workflow-list-full p { font-size: 15px; }
+
+/* the four safeguards (approach) */
+.integrity-grid { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: var(--s-55); }
+.integrity-card { padding: var(--s-34) var(--s-21); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.integrity-card h3 { margin-bottom: var(--s-13); }
+.integrity-card p:last-child { margin-bottom: 0; font-size: 15px; }
+
+/* the service cards of the inner pages: as many columns as cards (two on developers, three on buyers and partners) */
+.service-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* the closing block of the inner pages: a button, and on the investors page a second line with the address */
+.differentiator .large-copy + .large-copy { grid-row: auto; margin-top: 0; margin-bottom: 0; }
+.differentiator .large-copy a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid var(--accent-text); }
+.differentiator .hero-actions { grid-column: 1; grid-row: auto; margin: var(--s-21) 0 0; }
+
+
+/* contact: the enquiry text and the company block side by side */
+.contact-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--s-89); align-items: start; }
+.contact-block p { margin: 0; padding: var(--s-34) var(--s-21); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); color: var(--ink-strong); font-family: var(--font-mono); font-size: 14px; line-height: 1.9; letter-spacing: 0.02em; }
+.contact-block address { font-style: normal; }
+.contact-block a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid var(--accent-text); }
+
+/* legal: the entity sentence in full, then the two notes */
+.legal-copy { margin-top: var(--s-55); }
+.legal-lead { color: var(--ink-strong); font-size: 20px; font-weight: 300; line-height: 1.5; }
+.disclaimer-stack { display: grid; gap: var(--grid-gap); grid-template-columns: 1fr; margin-top: var(--s-55); }
+.disclaimer-card { padding: var(--s-34) var(--s-21); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.disclaimer-card h3 { margin-bottom: var(--s-13); }
+.disclaimer-card p:last-child { margin-bottom: 0; font-size: 15px; }
+
+@media (max-width: 1100px) { .integrity-grid, .service-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; gap: var(--s-55); }
+  .differentiator .hero-actions, .differentiator .large-copy + .large-copy { grid-column: 1; grid-row: auto; }
+}
+@media (max-width: 640px) { .integrity-grid, .service-grid:has(> :nth-child(2):last-child), .service-grid:has(> :nth-child(3):last-child) { grid-template-columns: 1fr; } .hero-inner { padding-block: var(--s-55); } }
+
+/* data room: the five categories and the three access steps */
+.room-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.room-grid .service-card h3 { margin-bottom: 0; }
+.room-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* private access: the sign-in route and the private area */
+.access-note { margin-top: var(--s-21); color: var(--muted); font-size: 15px; }
+.access-note a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid var(--accent-text); }
+.private-empty { margin: var(--s-34) 0 0; padding: var(--s-34) var(--s-21); border: 1px dashed var(--line-strong); border-radius: var(--radius); color: var(--muted); }
+@media (max-width: 1100px) { .room-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .room-grid, .room-steps { grid-template-columns: 1fr; } }
+/* H 2-Oct: the team's restricted access = one quiet button at the bottom of every page, never a top tab */
+.footer-team { margin: var(--s-21) 0 0; }
+.footer-team-button { background: transparent; color: var(--ink); border-color: var(--line); min-height: 40px; }
+.footer-team-button:hover { color: var(--ink-strong); border-color: var(--accent); }
+/* read by screen readers only: the data-room page keeps one page heading after H removed its visible title */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+/* H 2-Oct: the band credit on two lines, "Track all markets" then "on TradingView" */
+.market-band-credit .credit-line { display: block; }
+
+/* W40: the one-pager request form, Data room section 02 */
+.request-form { display: grid; gap: var(--s-21); margin-top: var(--s-21); }
+.form-row { display: grid; gap: 8px; }
+.form-pair { grid-template-columns: 1fr 1fr; gap: var(--s-21); }
+.form-pair > div { display: grid; gap: 8px; min-width: 0; }
+.request-form label { color: var(--ink); font-size: 15px; }
+.request-form input, .request-form select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 0; background: var(--panel); color: var(--ink-strong); font: inherit; font-size: 16px; }
+.request-form input:focus-visible, .request-form select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-note { color: var(--muted); font-size: 15px; }
+.form-note a, .form-status a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid var(--accent-text); }
+.form-status { display: none; margin-top: var(--s-21); color: var(--ink-strong); }
+.form-status:target { display: block; }
+@media (max-width: 640px) { .form-pair { grid-template-columns: 1fr; } }
+/* W40: home hero loop behind the hero, under a veil in the page colour so the text keeps its contrast in both themes */
+.hero-has-media .content-column, .hero-has-media .hero-visual { position: relative; z-index: 1; }
+.hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-media::after { content: ""; position: absolute; inset: 0; background: var(--bg-deep); opacity: 0.78; }
+.hero-video-toggle { position: absolute; right: var(--s-21); bottom: var(--s-21); z-index: 2; min-height: 36px; padding: 6px 12px; border: 1px solid var(--line-strong); background: var(--bg-deep); color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
+.hero-video-toggle:hover { color: var(--ink-strong); border-color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .hero-video-toggle { display: none; } }
+/* H 2-Oct: no globe on the video version; the hero text takes the full width over the loop */
+.hero.hero-has-media { grid-template-columns: minmax(0, 1fr); }
+/* H 2-Oct: the video stays in place while the page scrolls; the hero block sits at the bottom of the first screen */
+.hero.hero-has-media { clip-path: inset(0); min-height: calc(100svh - 150px); align-items: end; align-content: end; }
+.hero-has-media .hero-media { position: fixed; inset: 0; }
+.hero-has-media .hero-video-toggle { position: static; display: inline-block; margin-bottom: var(--s-21); }
+@media (max-width: 900px) { .hero.hero-has-media { min-height: calc(100svh - 260px); } }
+/* H 3-Oct: no eyebrow on the home hero; headline and lead sit close to the pathway buttons, tighter lines */
+.hero-has-media h1 { line-height: 0.96; margin-bottom: 0; }
+.hero-has-media .hero-lead { margin-top: var(--s-13); margin-bottom: var(--s-21); line-height: 1.45; }
+.hero-has-media .entry-row { padding-top: var(--s-13); }

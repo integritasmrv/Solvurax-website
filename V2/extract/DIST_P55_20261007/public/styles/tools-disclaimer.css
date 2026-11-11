@@ -1,0 +1,11 @@
+/* website tool module: one shared disclaimer, placed once per page that carries the tools - site variables only, both themes */
+.sx-tool-disclaimer {
+  margin-block: var(--s-34) var(--s-55);
+  padding: var(--s-13) var(--s-21);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--muted);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.sx-tool-disclaimer p { max-width: var(--prose); margin: 0; color: var(--ink); font-size: 14px; line-height: 1.55; }
+.sx-tool-disclaimer strong { color: var(--ink-strong); font-weight: 700; }
